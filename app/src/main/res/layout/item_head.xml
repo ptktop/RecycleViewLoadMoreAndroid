@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/ic_preview"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvHead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            tools:text="-" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textColor="@android:color/secondary_text_dark"
+            android:textSize="14sp"
+            tools:text="-" />
+    </LinearLayout>
+
+</LinearLayout>

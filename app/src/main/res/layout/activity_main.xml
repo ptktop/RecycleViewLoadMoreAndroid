@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:ignore="HardcodedText">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/progressLoading"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/colorAccent"
+            android:indeterminateTintMode="src_atop"
+            android:maxHeight="8dp"
+            android:minHeight="8dp"
+            android:visibility="gone"
+            tools:ignore="UnusedAttribute" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:padding="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/linearSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="4dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:cardUseCompatPadding="true"
+                tools:ignore="UnusedAttribute">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:drawableStart="@android:drawable/ic_search_category_default"
+                        android:drawableLeft="@android:drawable/ic_search_category_default"
+                        android:drawableTint="@android:color/secondary_text_dark"
+                        android:hint="ค้นหา"
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:minLines="1"
+                        android:padding="8dp"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/secondary_text_dark"
+                        android:textSize="@dimen/text_size_default_content"
+                        tools:ignore="UnusedAttribute" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swRefresh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linearSearch">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:backgroundTint="@android:color/white"
+        app:elevation="8dp"
+        app:fabSize="normal"
+        app:layout_behavior="com.ptktop.recycleviewloadmoreandroid.utils.ScrollAwareFabBehavior"
+        app:maxImageSize="16dp"
+        app:srcCompat="@android:drawable/arrow_up_float"
+        app:tint="@android:color/darker_gray" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
